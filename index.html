@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+    <link rel="stylesheet" href="./_common/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-contents">
+            <h1>コンソールにアウトプット</h1>
+            <h2>開発ツールを開く、閉じる</h2>
+        </div><!-- /.header-contents -->
+    </header>
+        
+    <div class="main-wrapper">
+    <section>
+        <form action="#" id="form">
+            <input type="text" name="word">
+            <input type="submit" value="検索">
+        </form>
+        <p id="output"></p>
+    </section>
+    </div><!-- /.main-wrapper -->
+    
+    <footer>JavaScript Samples</footer>
+    <script>
+        document.getElementById('form').onsubmit = function(){
+            let search = document.getElementById('form').word.value;
+            document.getElementById('output').textContent = '『' + search + '』の検索中...';
+            console.log('クリックされました。');
+            return false;
+        };
+    </script>
+</body>
+</html>

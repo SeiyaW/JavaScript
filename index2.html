@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+    <link rel="stylesheet" href="./_common/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-contents">
+            <h1>日時を表示する</h1>
+            <h2></h2>
+        </div><!-- /.header-contents -->
+    </header>
+        
+    <div class="main-wrapper">
+    <section>
+        <p>最終アクセス日時：<span id="time"></span></p>
+    </section>
+    </div><!-- /.main-wrapper -->
+    
+    <footer>JavaScript Samples</footer>
+    <script>
+       let now = new Date();
+       let year = now.getFullYear();
+       let month = now.getMonth();
+       let date = now.getDate();
+       let hour = now.getHours();
+       let min = now.getMinutes();
+       let ampm = '';
+       if(hour < 12){
+        ampm = 'a.m.'
+       }else{
+        ampm = 'p.m.'
+       }
+
+       let output = year + '/' + (month + 1) + '/' + date + ' ' + (hour % 12) + ':' + min + ampm;
+       document.getElementById('time').textContent = output;
+    </script>
+</body>
+</html>
